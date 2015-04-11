@@ -63,7 +63,6 @@ class HashTable(object):
 
         miss_count = 0
 
-        # Initial implementation: Linear resolving of hash collisions
         while candidate is not None:
             miss_count += 1
 

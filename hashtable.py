@@ -39,6 +39,10 @@ class HashTable(object):
                 self.put(entry.key, entry.value)
 
     def put(self, key, value):
+        """
+        Stores a key, value pair in the hash table
+        """
+
         if self._over_capacity():
             self.grow()
 
@@ -86,6 +90,9 @@ class HashTable(object):
         return hash_key
 
     def get(self, key):
+        """
+        Retrieves a value given a key from the hash table
+        """
         hash_key = self._find_existing(key)
 
         if hash_key is not None:
@@ -102,9 +109,6 @@ class HashTable(object):
             del self.table[existing_key]
             self.size -= 1
 
-
-    def reshuffle(self):
-        pass
 
 class HashTableEntry(object):
     def __init__(self, k, v):
